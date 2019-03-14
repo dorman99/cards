@@ -57,9 +57,9 @@ func readFromFile(fileName string) deck {
 func (d deck) shuffle() {
 	decklen := len(d)
 	source := rand.NewSource(time.Now().UnixNano())
-	r := rand.New(source)
+	r := rand.New(source) //rand object
 	for i := range d {
-		newPos := r.Intn(decklen)
+		newPos := r.Intn(decklen) // create random number from decklen
 		d[i], d[newPos] = d[newPos], d[i]
 	}
 }
